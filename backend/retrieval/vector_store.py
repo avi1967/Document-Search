@@ -4,10 +4,10 @@ import os
 
 
 class VectorStore:
-    def __init__(self, dim, path="D:/llm_vector_store"):
+    def __init__(self, dim, path="data/vector_index"):
         self.dim = dim
 
-        # Ensure directory exists on D drive
+        # Ensure directory exists
         os.makedirs(path, exist_ok=True)
 
         self.file_path = os.path.join(path, "vectors.pkl")

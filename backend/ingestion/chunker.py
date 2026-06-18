@@ -2,7 +2,7 @@ def chunk_pages(pages, chunk_size=500, overlap=50):
     chunks = []
 
     for page in pages:
-        text = page["text"]
+        text = page.get("content", "")
         start = 0
 
         while start < len(text):
@@ -11,7 +11,8 @@ def chunk_pages(pages, chunk_size=500, overlap=50):
 
             chunks.append({
                 "content": chunk_text,
-                "page": page["page"]
+                "page": page.get("page"),
+                "document": page.get("document")
             })
 
             start = end - overlap
