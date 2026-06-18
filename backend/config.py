@@ -2,10 +2,10 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-USE_OPENAI = False  # ← change to True when you have credits
-
-
 class Settings:
+    # Config
+    USE_OPENAI = False  # ← change to True when you have credits
+    
     # API Keys
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
